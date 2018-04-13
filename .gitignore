@@ -10,5 +10,9 @@
 # rspec failure tracking
 .rspec_status
 
+# Ignore environment specific files
 *.swp
 .DS_Store
+
+# Ignore gemfiles
+*.gem
