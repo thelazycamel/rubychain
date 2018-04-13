@@ -10,18 +10,9 @@ Gem::Specification.new do |spec|
   spec.email         = ["hanscs1969@yahoo.co.uk"]
 
   spec.summary       = "A simple blockchain built on Ruby"
-  spec.description   = "Based on python version: https://dev.to/aunyks/lets-build-the-tiniest-blockchain"
-  spec.homepage      = "https://www.todo.com"
+  spec.description   = "A very simple ruby implementation of a blockchain, based on python version: https://dev.to/aunyks/lets-build-the-tiniest-blockchain"
+  spec.homepage      = "https://github.com/thelazycamel/rubychain"
   spec.license       = "MIT"
-
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
-  end
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
