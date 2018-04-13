@@ -27,11 +27,14 @@ require 'rubychain'
 ## Rubychain::Chain
 ### Available methods
 
-
 `add_next_block` => Adds a new block to the blockchain with the given data
+
 `genesis_block` => Returns the Genesis block
+
 `last_block` => Returns the last block that was added to the blockchain
+
 `find_block(hash)` => Returns a block from the blockchain with the given hash
+
 `blockchain` => Returns the whole blockchain as an array
 
 ### Exploring the blockchain
@@ -41,34 +44,49 @@ Initialize a new blockchain with a genesis block:
 `rc = Rubychain::Chain.new`
 
 `rc.add_next_block("some data")` => creates a new block with given data
+
 `rc.genesis_block` => returns the genesis block
+
 `rc.last_block` => returns the last block on the blockchain
+
 `rc.find_block(hash)` => return the block with the given hash
+
 `rc.blockchain` => [genesis_block, block2] => Returns the whole blockchain as an array
 
 ## Rubychain::Block
 ### Available methods
 
 `index` => returns the blocks index
+
 `timestamp` => returns the blocks timestamp
+
 `data` => returns the blocks data
+
 `prev_hash` => returns the previous blocks hash
+
 `hash` => returns a SHA256 hash representation of all the items in the block
 
 ### Exploring a block
 
 `myblock = rc.last_block`
+
 or
+
 `myblock = rc.find_block(hash)`
+
 or directly
+
 `myblock = Rubychain::Block.new(1, Time.now, "Hello World", "abc123")`
 
 `myblock.index` => 1
-`myblock.timestamp` => Time of creation
-`myblock.data` => "Hello World"
-`myblock.pre_hash` => "abc123"
-`myblock.hash` => sha.hexdigest of index, timestamp, data and previous block hash
 
+`myblock.timestamp` => Time of creation
+
+`myblock.data` => "Hello World"
+
+`myblock.pre_hash` => "abc123"
+
+`myblock.hash` => sha.hexdigest of index, timestamp, data and previous block hash
 
 ## Development
 
