@@ -4,6 +4,14 @@ Rubychain is a very simple implementation of a blockchain for education purposes
 It is heavily inspired by the python version
 which can be found here: https://dev.to/aunyks/lets-build-the-tiniest-blockchain
 
+There are only 2 classes which are /lib/rubychain/chain and /lib/rubychain/block
+
+`Rubychain::Chain` for creating, updating and exploring the blockchain
+
+`Rubychain::Block` for creating each individual block
+
+Check out the instructions below or the specs to see how it all works
+
 ## Installation
 
 Add this line to your application's Gemfile:
