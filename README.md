@@ -35,11 +35,11 @@ require 'rubychain'
 ## Rubychain::Chain
 ### Available methods
 
-`add_next_block(prev_block, data)` => Adds a new block to the blockchain with the given data and previous block
-
 `genesis_block` => Returns the Genesis block
 
 `last_block` => Returns the last block that was added to the blockchain
+
+`add_next_block(prev_block, data)` => Adds a new block to the blockchain with the given data and previous block
 
 `find_block(hash)` => Returns a block from the blockchain with the given hash
 
@@ -51,15 +51,15 @@ Initialize a new blockchain with a genesis block:
 
 `rc = Rubychain::Chain.new`
 
-`rc.add_next_block(rc.last_block, "some data")` => creates a new block with given data and previous block
-
 `rc.genesis_block` => returns the genesis block
 
 `rc.last_block` => returns the last block on the blockchain
 
+`rc.add_next_block(rc.last_block, "some data")` => creates a new block with given data and previous block
+
 `rc.find_block(hash)` => return the block with the given hash
 
-`rc.blockchain` => [genesis_block, block2] => Returns the whole blockchain as an array
+`rc.blockchain` => [genesis_block, block_1, block_2] => Returns the whole blockchain as an array
 
 ## Rubychain::Block
 ### Available methods
