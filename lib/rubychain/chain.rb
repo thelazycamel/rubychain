@@ -1,3 +1,5 @@
+require 'digest'
+
 module Rubychain
   class Chain
 
@@ -43,7 +45,11 @@ module Rubychain
     private
 
     def valid_block?(prev_block)
-      prev_block.hash == last_block.hash
+      prev_block_hash(prev_block) == last_block.hash
+    end
+
+    def prev_block_hash(prev_block)
+      Digest::SHA256.new.update([prev_block.index,prev_block.timestamp, prev_block.data, prev_block.prev_hash].join).hexdigest
     end
 
     def next_block(data)
