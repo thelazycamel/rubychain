@@ -13,9 +13,11 @@ module Rubychain
       @hash = hash_block
     end
 
+    # Create the blocks hash by encrypting all the blocks data using SHA256
+
     def hash_block
       hash_string = [index,timestamp,data,prev_hash].join
-      sha = Digest::SHA1.new
+      sha = Digest::SHA256.new
       sha.update(hash_string)
       sha.hexdigest
     end

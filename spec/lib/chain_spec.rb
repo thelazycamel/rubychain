@@ -27,7 +27,13 @@ describe Rubychain::Chain do
       puts "#{last_block.data} : #{last_block.hash}"
     end
     expect(rubychain.blockchain.size).to eq(11)
+  end
 
+  it "should find a block with a given hash" do
+    rubychain = Rubychain::Chain.new
+    10.times {|x| rubychain.add_next_block("Block #{x+1} Added") }
+    block5 = rubychain.blockchain[4]
+    expect(rubychain.find_block(block5.hash)).to eq(block5)
   end
 
 end
