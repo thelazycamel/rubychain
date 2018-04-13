@@ -1,7 +1,9 @@
 module Rubychain
   class Chain
 
-    attr_accessor :blockchain
+    attr_reader :blockchain
+
+    class InvalidBlockError < StandardError; end
 
     # Initialize a new blockchain by creating a new array with the Genesis block
     #
@@ -10,9 +12,14 @@ module Rubychain
     end
 
     # #add_next_block => Adds a new block to the blockchain with the given data
+    # it will raise an error if the previous_block hash does not match the last_block in our blockchain
     #
-    def add_next_block(data)
-      blockchain << next_block(data)
+    def add_next_block(prev_block, data)
+      if valid_block?(prev_block)
+        blockchain << next_block(data)
+      else
+        raise InvalidBlockError
+      end
     end
 
     # #genesis_block => Returns the Genesis block
@@ -34,6 +41,10 @@ module Rubychain
     end
 
     private
+
+    def valid_block?(prev_block)
+      prev_block.hash == last_block.hash
+    end
 
     def next_block(data)
       index = last_block.index + 1
