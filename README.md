@@ -39,7 +39,7 @@ require 'rubychain'
 
 `last_block` => Returns the last block that was added to the blockchain
 
-`add_next_block(prev_block, data)` => Adds a new block to the blockchain with the given data and previous block
+`add_next_block(prev_block, data)` => Adds a new block to the blockchain with the given data and previous block (for validation)
 
 `find_block(hash)` => Returns a block from the blockchain with the given hash
 
@@ -55,7 +55,7 @@ Initialize a new blockchain with a genesis block:
 
 `rc.last_block` => returns the last block on the blockchain
 
-`rc.add_next_block(rc.last_block, "some data")` => creates a new block with given data and previous block
+`rc.add_next_block(rc.last_block, "some data")` => creates a new block with given data and given that the previous block is valid
 
 `rc.find_block(hash)` => return the block with the given hash
 
