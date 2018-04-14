@@ -44,6 +44,10 @@ module Rubychain
 
     private
 
+    # #valid_block? validate the prev block passed into the add_next_block method
+    # against the last block in the blockchain, it does this by creating a SHA256 hexdigest
+    # of the passed in block and checks that against the already hashed version of the last block
+
     def valid_block?(prev_block)
       prev_block_hash(prev_block) == last_block.hash
     end
